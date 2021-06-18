@@ -26,7 +26,6 @@ function includeHTML() {
   }
 }
 
-
 window.addEventListener('scroll', ()=> {
   let bg = document.querySelector('.bg-img');
   let rate = window.pageYOffset*0.5;
