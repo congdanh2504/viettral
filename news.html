@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VietTral-Top news</title>
+    <link rel="shortcut icon" type="image/jpg" href="image/logo-sm.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+    <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+    <link rel="stylesheet" href="css/floatchat.css">
+    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/news.css">
+    <script src="js/scrolltopcontrol.js"></script>
+    <script> new WOW().init();</script>
+    <script src="js/include.js"></script>
+</head>
+<body> 
+    <nav class="navbar navbar-expand-sm text-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav" id="navi">
+                <li class="navbar-header"><a href="#"><img src="../image/logo-sm.png" alt=""></a></li>
+                <li class="nav-item"><a href="../trangchu.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown"><a href="#" class="nav-link" data-toggle="dropdown">Places to go</a>
+                    <div class="dropdown-menu memu">
+                        <div class="dropdown-item">
+                            <a href="../filter.html" class="btn btn-outline-danger dropdown-itemm"style="margin: 15px;width: 100%;"><i class="fa fa-filter"></i>Filter with keywords</a>   
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/halongbay1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/halongbay.html">Halong Bay</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hcm1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hcmcity.html">Ho Chi Minh City</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/pnkb1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/pnkb.html" style="width: 70%;">Phong Nha-Ke
+                                Bang National Park</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/myson1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/myson.html">My Son</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hoian1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hoian.html">Hoi An</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/sapa1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/sapa.html">Sapa Countryside</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hanoi1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hanoi.html">Ha Noi</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/nhatrang1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/nhatrang.html">Nha Trang</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/cuchi1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/cuchi.html">Cu Chi Tunnels</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/babe1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/babe.html">Ba Be National Park</a>
+                        </div>
+    
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../food.html" class="nav-link">Cuisine</a></li>
+                <li class="nav-item"><a href="../news.html" class="nav-link">Travel News</a></li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="line-height: 2;">
+                <li class="nav-item">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="seasrch-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="fa fa-bell-o" aria-hidden="true">Notification</i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown" style="font-weight: normal;">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="fa fa-user-o" id="user" aria-hidden="true"> Account</i>
+                    </a>
+                    <ul class="dropdown-menu" id="acc" style="font-weight: normal;">
+                        <li>
+                            <i class="fa fa-user"  aria-hidden="true" style="color: #F7559A;"></i>
+                            <a href="#">My profile</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <i class="fa fa-sign-out" aria-hidden="true" style="color: #F7559A;"></i>
+                            <a href="log.html">Log-out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="padding-top: 20px;">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="tag-content">VietNam Travel News</h3>
+                <div class="row wow bounceInLeft">
+                    <div class="col-md-6">
+                        <img class="rounded" src="/image/news/khautrang-dalat.jpg" width="100%">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="news-content">
+                            <h4>
+                                <a href="#">Not wearing a mask in public will be fined up to 69 million VND in Da
+                                    Lat</a>
+                            </h4>
+                            <p>
+                                Mr. Le Anh Kiet, Head of the Department of Culture and Information of Da Lat City (Lam
+                                Dong), said he would strictly handle violations of safety regulations in the prevention
+                                of epidemics.
+                                <span>
+                                    <i class="fa fa-calendar" aria-hidden="true"> 29/04/2021</i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/news/vitm.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="news-content">
+                            <h4>
+                                <a href="#">The organization date of VITM Hanoi 2021 will be reversed to the beginning
+                                    of June 2021
+                                </a>
+                            </h4>
+                            <p>
+                                According to the decision of the Organizing Committee of VITM Hanoi 2021, the fair will
+                                be delayed from the opening date to about early June 2021, the location is still at the
+                                Vietnam-Soviet Friendship Cultural Palace.
+                                <!-- <i class="fa fa-calendar" aria-hidden="true"> 29/04/2021</i> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/news/cualo.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7 news-content">
+                        <h4><a href="#">Nghe An, Ha Tinh temporarily stopped organizing the sea tourism festival on the
+                                holiday of April 30</a></h4>
+                        <p>
+                            Due to the complicated development of the Covid-19 epidemic, many tourism, cultural and
+                            festival activities have to be halted in Nghe An and Ha Tinh.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/news/hanoi.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7 news-content">
+                        <h4><a href="#">Hanoi tightens measures to prevent and control the epidemic Covid-19</a></h4>
+                        <p>
+                            The Standing Committee of Hanoi City Party Committee has just sent an official letter to
+                            stop organizing festivals and walking streets in the city, continue to limit events and
+                            activities.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/news/nhatrang.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7 news-content">
+                        <h4><a href="#">Resort Nha Trang is voted the best in the world by the American newspaper</a>
+                        </h4>
+                        <p>
+                            The Standing Committee of Hanoi City Party Committee has just sent an official letter to
+                            stop organizing festivals and walking streets in the city, continue to limit events and
+                            activities.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/news/phuquoc.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7 news-content">
+                        <h4><a href="#">5 check-in points should not be missed in the northern island of Phu Quoc</a>
+                        </h4>
+                        <p>
+                            Ganh Dau Cape, Rach Vem fishing village, Phu Quoc United Center ... are interesting
+                            destinations for visitors to visit north of Ngoc Island.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <!--  -->
+                <div class="row sub-news wow bounceInLeft">
+                    <div class="col-md-5">
+                        <img class="rounded" src="/image/places/sapa3.jpg" width="100%">
+                    </div>
+                    <div class="col-md-7 news-content">
+                        <h4><a href="#">Ha Giang's color - charming beauty in the northeastern high place</a>
+                        </h4>
+                        <p>
+                            Not only impressing with the outstanding beauty of cat-eared cauldron stretching all over
+                            the hillsides, the winding pass road, Ha Giang also captures the hearts of visitors by the
+                            heroic stories of the nation.
+                    </div>
+                </div>
+                <hr>
+                <div style="padding: 0% 30%;">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                </div>
+            </div>
+            <div class="col-md-4" style="padding-top: 0;">
+                <h3 class="tag-content">Hot News</h3>
+                <div class="hotnews">
+                    <a href="#">
+                        Hoi An suspends tourism activities when there are Covid patients in the area
+                    </a>
+                    <hr>
+                    <a href="#">
+                        Hue uses virtual reality technology to help visitors experience the Royal Palace
+                    </a>
+                    <hr>    
+                    <a href="#">
+                        Experience to go backpacking Hai Van Pass Da Nang From A-Z
+                    </a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container" style="text-align: center;">
+        <h1 class="title">Our partners</h1>
+        <p>Contact with these companies for the best experiences!</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://tmgroup.vn/">
+                        <img class="rounded" src="/image/news/tmg.png" width="100%">
+                        <span class="cap">Thiên Minh Group</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 12th floor, 70 - 72 Ba Trieu, Hoan Kiem,
+                                Hanoi</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 24 3926 3148</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.tmgroup.vn</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://vinpearl.com/vi">
+                        <img class="rounded" src="/image/news/vin.jpg" width="100%">
+                        <span class="cap">Vin Group</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 20A Vincom Center Dong Khoi, 72 Le Thanh Ton, Ho
+                                Chi Minh City</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 24 3974 9999</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.vinpearl.com</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="www.asiadmc.com">
+                        <img class="rounded" src="/image/news/asia.png" width="100%">
+                        <span class="cap">ASIA DMC</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 47 Phan Chau Trinh, Hoan Kiem, Hanoi</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 93 646 1068</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.asiadmc.com</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="http://muongthanh.com/">
+                        <img class="rounded" src="/image/news/muongthanh.jpg" width="100%">
+                        <span class="cap">Mường Thanh Group</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> CC2 North Linh Dam, Hoang Mai, Hanoi</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> 1900 1833</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.muongthanh.com</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://www.sungroup.com.vn/">
+                        <img class="rounded" src="/image/news/sun.png" width="100%">
+                        <span class="cap">SUN GROUP</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 9th floor, 218 Bach Dang, Hai Chau,
+                                Danang</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 236 3 819 181</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.sungroup.com.vn</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://www.saigontourist.com.vn/">
+                        <img class="rounded" src="/image/news/saigon.png" width="100%">
+                        <span class="cap">SAIGONTOURIST HOLDING COMPANY</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 23 Le Loi Street, District 1, Ho Chi Minh
+                                City</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 28 3822 5887</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.saigontourist.com.vn</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://www.saigontourist.com.vn/">
+                        <img class="rounded" src="/image/news/bim.jpg" width="100%">
+                        <span class="cap">BIM LAND</span>
+                        <span><i class="fa fa-map" aria-hidden="true">3rd floor, Syrena Tower 51 Xuan Dieu, Tay Ho,
+                                Hanoi</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 24 3719 7214</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.saigontourist.com.vn</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://www.vietnamairlines.com/vn/en/home">
+                        <img class="rounded" src="/image/news/vna.jpg" width="100%">
+                        <span class="cap">VIETNAM AIRLINES</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 200 Nguyen Son, Long Bien, Hanoi</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> +84 438 732 732</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.vietnamairlines.com</i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <a href="https://www.visa.com.vn/">
+                        <img class="rounded" src="/image/news/visa.jpg" width="100%">
+                        <span class="cap">VISA</span>
+                        <span><i class="fa fa-map" aria-hidden="true"> 5th floor, Deutsches Haus 33 Le Duan, District 1,
+                                Ho Chi Minh City</i></span>
+                        <span><i class="fa fa-phone" aria-hidden="true"> 888 710 7781</i></span>
+                        <br>
+                        <span><i class="fa fa-home" aria-hidden="true"> www.visa.com.vn</i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <script src="js/floatbtnchat.js"></script>
+    <div w3-include-html="_footer.html"></div>
+    <script>includeHTML();</script>
+<script src="js/accMana.js"></script>
+</body>
+</html>

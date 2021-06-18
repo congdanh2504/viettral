@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VietTral- Cuisine</title>
+    <link rel="shortcut icon" type="image/jpg" href="image/logo-sm.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+    <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+    <link rel="stylesheet" href="css/floatchat.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/food.css">
+    <script src="js/scrolltopcontrol.js"></script>
+    <script src="js/include.js"></script>
+</head>
+
+<body>
+    <script> new WOW().init();</script>
+    <nav class="navbar navbar-expand-sm text-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav" id="navi">
+                <li class="navbar-header"><a href="#"><img src="../image/logo-sm.png" alt=""></a></li>
+                <li class="nav-item"><a href="../trangchu.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown"><a href="#" class="nav-link" data-toggle="dropdown">Places to go</a>
+                    <div class="dropdown-menu memu">
+                        <div class="dropdown-item">
+                            <a href="../filter.html" class="btn btn-outline-danger dropdown-itemm"style="margin: 15px;width: 100%;"><i class="fa fa-filter"></i>Filter with keywords</a>   
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/halongbay1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/halongbay.html">Halong Bay</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hcm1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hcmcity.html">Ho Chi Minh City</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/pnkb1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/pnkb.html" style="width: 70%;">Phong Nha-Ke
+                                Bang National Park</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/myson1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/myson.html">My Son</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hoian1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hoian.html">Hoi An</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/sapa1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/sapa.html">Sapa Countryside</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/hanoi1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/hanoi.html">Ha Noi</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/nhatrang1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/nhatrang.html">Nha Trang</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/cuchi1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/cuchi.html">Cu Chi Tunnels</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <img width="30%" src="../image/places/babe1.jpg">
+                            <a class="dropdown-itemm" href="../topplaces/babe.html">Ba Be National Park</a>
+                        </div>
+    
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../food.html" class="nav-link">Cuisine</a></li>
+                <li class="nav-item"><a href="../news.html" class="nav-link">Travel News</a></li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="line-height: 2;">
+                <li class="nav-item">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="seasrch-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="fa fa-bell-o" aria-hidden="true">Notification</i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown" style="font-weight: normal;">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="fa fa-user-o" id="user" aria-hidden="true"> Account</i>
+                    </a>
+                    <ul class="dropdown-menu" id="acc" style="font-weight: normal;">
+                        <li>
+                            <i class="fa fa-user"  aria-hidden="true" style="color: #F7559A;"></i>
+                            <a href="#">My profile</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <i class="fa fa-sign-out" aria-hidden="true" style="color: #F7559A;"></i>
+                            <a href="log.html">Log-out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div style="overflow: hidden;">
+        <img class="bg-img" src="../image/food/pho.jpg" alt=""  width="100%">   
+    </div>
+    <div class="container wow bounceInLeft">
+        <div class="row">
+            <div class="col-md-12 food-content">
+                <h1 class="title">vietnam - a paradise of food!</h1>
+                <p>
+                    Vietnam tourism has significantly gained in popularity over the last few years.
+                    And why not? Amazing landscapes, jewel-studded waters, the romance of a pastoral life and impressive
+                    architecture
+                    – for those struck with wanderlust, Vietnam is paradise.But if you were to consider Vietnam visits
+                    worthy merely
+                    for its natural beauty, or cultural heritage, you’d be doing the country a disservice.
+                    Because, Vietnam tourism is incomplete without trying the food of Vietnam!
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container wow bounceInDown">
+        <div class="row" style="height: 120vh;">
+            <div class="col-md-6">
+                <div class="content-oval">
+                    <div class="content-oval float">
+                        <div class="content">
+                            <h4 class="title">Diverse Food Culture</h4>
+                            <p>
+                                In addition, the cuisine is not only about the delicious dishes, it also expresses the
+                                identity of each region and each country. Vietnam is a country located in the tropical
+                                monsoon climatic region with the territory divided into 3 regions: North – Center –
+                                South and with 54 ethnic groups. It is also perhaps because of characteristics such as
+                                geography, climate, culture, customs, etc.
+                                That the cuisine of this S-shaped country is also more varied.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="image/food/VNfood.jpg" alt="" style="height: 85%; padding-left: 30px;">
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container">
+        <div class="row wow bounceInLeft">
+            <div class="col-md-12">
+                <div class="wrap-title">
+                    <h3 class="small-title">Food</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row wow bounceInRight">
+            <div class="col-md-4">
+                <a href="">
+                    <div class="img_wrapper">
+                        <img src="image/food/whatoeat.png" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>What to eat in VietNam?</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="">
+                    <div class="img_wrapper">
+                        <img src="image/food/street.jpg" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>VietNam street food</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="dropdown-itemm" href="./food-news/noodle.html">
+                    <div class="img_wrapper">
+                        <img src="image/food/pho (1).jpg" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>Noodle Soup</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row wow bounceInLeft">
+            <div class="col-md-4">
+                <a class="dropdown-itemm" href="food-news/10dish.html">
+                    <div class="img_wrapper">
+                        <img src="image/food/2dishes.jpg" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>10 dishes must try in VietNam</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="dropdown-itemm" href="./food-news/sweetsoup.html">
+                    <div class="img_wrapper">
+                        <img src="image/food/che1.jpg" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>Hue Specialty Sweet Soup</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="">
+                    <div class="img_wrapper">
+                        <img src="image/food/chonoi.jpg" alt="">
+                        <div class="img_wrapper-text">
+                            <h5>Cho Noi Cai Rang</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <script src="js/floatbtnchat.js"></script>
+    <div w3-include-html="_footer.html"></div>
+    <script>includeHTML();</script>
+    <script src="js/accMana.js"></script>
+</body>
+
+</html>

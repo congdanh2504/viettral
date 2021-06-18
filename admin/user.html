@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/image/logo-sm.png" />
+    <title>User</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="section">
+        <input type="checkbox" id="check" style="padding: 0;">
+        <label for="check">
+            <i class="fa fa-bars" id="btn"></i>
+            <i class="fa fa-times" id="cancel"></i>
+        </label>
+        <div class="sidebar">
+            <header>Admin</header>
+            <ul>
+                <li>
+                    <a href="/trangchu.html?username=admin&password=admin"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                </li>
+                <li>
+                    <a href="/admin/post.html?username=admin&password=admin"><i class="fa fa-clipboard" aria-hidden="true"></i>Posts
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/user.html?username=admin&password=admin"><i class="fa fa-users" aria-hidden="true"></i>Users </a>
+                </li>
+                <li>
+                    <a href="/admin/statistical.html?username=admin&password=admin"><i class="fa fa-bar-chart" aria-hidden="true"></i>Statistical </a>
+                </li>
+                <li>
+                    <a href="/admin/message.html?username=admin&password=admin"><i class="fa fa-envelope" aria-hidden="true"></i>Message </a>
+                </li>
+            </ul>
+        </div>
+        <div class="post">
+            <div class="container mt-3" style="width: 100%;">
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <br>
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <tr>
+                            <td>1</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>0986119531</td>
+                            <td>Hue City</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Moe</td>
+                            <td>mary@mail.com</td>
+                            <td>0986938531</td>
+                            <td>Da Nang</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Dooley</td>
+                            <td>july@greatstuff.com</td>
+                            <td>0986119531</td>
+                            <td>Quang Tri</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Ravendale</td>
+                            <td>a_r@test.com</td>
+                            <td>0986119531</td>
+                            <td>Hue</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Jack</td>
+                            <td>jack@test.com</td>
+                            <td>0986119531</td>
+                            <td>Scotland</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>0986119531</td>
+                            <td>Moscow, Rusia</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Moe</td>
+                            <td>mary@mail.com</td>
+                            <td>0986119531</td>
+                            <td>California,United States</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Dooley</td>
+                            <td>july@greatstuff.com</td>
+                            <td>0986119531</td>
+                            <td>United Kingdom</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Ravendale</td>
+                            <td>a_r@test.com</td>
+                            <td>0986119531</td>
+                            <td>Ustraulia</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Jack</td>
+                            <td>jack@test.com</td>
+                            <td>0986119531</td>
+                            <td>Singapore</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $("#myInput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+  
+</body>
+<script src="js/accMana.js"></script>
+
+</html>

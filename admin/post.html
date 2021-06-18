@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/image/logo-sm.png" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="section">
+        <input type="checkbox" id="check" style="padding: 0;">
+        <label for="check">
+            <i class="fa fa-bars" id="btn"></i>
+            <i class="fa fa-times" id="cancel"></i>
+        </label>
+        <div class="sidebar">
+            <header>Admin</header>
+            <ul>
+                <li>
+                    <a href="/trangchu.html?username=admin&password=admin"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                </li>
+                <li>
+                    <a href="/admin/post.html?username=admin&password=admin"><i class="fa fa-clipboard" aria-hidden="true"></i>Posts
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/user.html?username=admin&password=admin"><i class="fa fa-users" aria-hidden="true"></i>Users </a>
+                </li>
+                <li>
+                    <a href="/admin/statistical.html?username=admin&password=admin"><i class="fa fa-bar-chart" aria-hidden="true"></i>Statistical </a>
+                </li>
+                <li>
+                    <a href="/admin/message.html?username=admin&password=admin"><i class="fa fa-envelope" aria-hidden="true"></i>Message </a>
+                </li>
+            </ul>
+        </div>
+        <div class="post">
+
+            <form action="submit">
+                <table>
+                    <tr>
+                        <td colspan="2" style="font-size:1.5rem">Input the information of the new post!</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">Tittle:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Category:</td>
+                        <td>
+                            <select name="dmuc" id="dmuc">
+                                <option value="Place to go">Place to go</option>
+                                <option value="Cuisine">Cuisine</option>
+                                <option value="Travel news">Travel news</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Path:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Content of the post</td>
+                        <td>
+                            <div>
+                                <div clas="edit">
+                                    <div id="editor"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div style="padding-left: 220px;">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+            <script>
+                ClassicEditor
+                    .create(document.querySelector('#editor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+            </script>
+        </div>
+    </div>
+</body>
+<script src="js/accMana.js"></script>
+
+</html>

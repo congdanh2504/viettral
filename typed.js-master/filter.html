@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <link rel="shortcut icon" type="image/jpg" href="image/logo-sm.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+    <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+    <script> new WOW().init();</script>
+    <link rel="stylesheet" href="css/floatchat.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scrolltopcontrol.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="js/include.js"></script>
+</head>
+
+<body>
+    <div w3-include-html="_header.html"></div>
+    <div class="container">
+        <div class="content wow bounceInLeft">
+            <h1 class="title">Filter</h1>
+            <style>
+                .toggle.ios,
+                .toggle-on.ios,
+                .toggle-off.ios {
+                    border-radius: 20px;
+                }
+
+                .toggle.ios .toggle-handle {
+                    border-radius: 20px;
+                }
+            </style>
+            <input type="checkbox" onchange="filter(0,this)" id="toggleCity" unchecked data-toggle="toggle"
+                data-style="ios" data-on="City" data-off="City">
+            <input type="checkbox" onchange="filter(1,this)" id="toggleHistoric" unchecked data-toggle="toggle"
+                data-style="ios" data-on="Historic" data-off="Historic">
+            <input type="checkbox" onchange="filter(2,this)" id="toggleCave" unchecked data-toggle="toggle"
+                data-style="ios" data-on="Cave" data-off="Cave">
+            <input type="checkbox" onchange="filter(3,this)" id="toggleWater" unchecked data-toggle="toggle"
+                data-style="ios" data-on="Water" data-off="Water">
+            <input type="checkbox" onchange="filter(4,this)" id="toggleMountain" unchecked data-toggle="toggle"
+                data-style="ios" data-on="Mountain" data-off="Mountain">
+            <script>
+
+                var arryyy = [
+                    [false, false, false, true, true],
+                    [true, false, false, false, false],
+                    [false, false, true, true, true],
+                    [false, true, false, false, true],
+                    [false, true, false, false, false],
+                    [false, false, false, false, true],
+                    [true, false, false, false, false],
+                    [true, false, false, true, false],
+                    [false, true, false, false, false],
+                    [false, false, false, true, true],
+                ]
+                var checkedList = [false, false, false, false];
+                function filter(e, ele) {
+                    var filter = document.getElementById("filter");
+                    filter.innerHTML = "";
+                    let checknull = false;
+                    checkedList[e] = ele.checked;
+                    for (let i = 0; i < 10; i++) {
+                        var check = false;
+                        for (let j = 0; j < 5; j++) {
+                            if (checkedList[j] == true) {
+                                if (checkedList[j] == arryyy[i][j]) {
+                                    check = true;
+
+                                } else {
+                                    check = false;
+                                    break;
+                                }
+                            }
+                        }
+                        if (check) {
+                            checknull = true;
+                            switch (i) {
+                                case 0:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%"  src="./image/places/halongbay1.jpg"><a  class="dropdown-itemm" href="../topplaces/halongbay.html"><h1>Halong Bay</h1></a></div>'
+                                    break;
+                                case 1:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/hcm1.jpg"><a class="dropdown-itemm" href="../topplaces/hcmcity.html"><h1>Ho Chi Minh City</h1></a></div>'
+                                    break;
+                                case 2:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/pnkb1.jpg"><a class="dropdown-itemm" href="../topplaces/pnkb.html"><h1>Phong Nha-Ke Bang National Park</h1></a></div>'
+                                    break;
+                                case 3:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/myson1.jpg"><a class="dropdown-itemm" href="../topplaces/myson.html"><h1>My Son</h1></a></div>'
+                                    break;
+                                case 4:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/hoian2.jpg"><a class="dropdown-itemm" href="../topplaces/hoian.html"><h1>Hoi An</h1></a></div>'
+                                    break;
+                                case 5:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/sapa1.jpg"><a class="dropdown-itemm" href="../topplaces/sapa.html"><h1>Sapa Countryside</h1></a></div>'
+                                    break;
+                                case 6:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/hanoi1.jpg"><a class="dropdown-itemm" href="../topplaces/hanoi.html"><h1>Hanoi</h1></a></div>'
+                                    break;
+                                case 7:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/nhatrang1.jpg"><a class="dropdown-itemm" href="../topplaces/nhatrang.html"><h1>Nha Trang</h1></a></div>'
+                                    break;
+                                case 8:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/cuchi2.jpg"><a class="dropdown-itemm" href="../topplaces/cuchi.html"><h1>Cu Chi Tunnels</h1></a></div>'
+                                    break;
+                                case 9:
+                                    filter.innerHTML += '<div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/babe1.jpg"><a class="dropdown-itemm" href="../topplaces/babe.html"><h1>Ba Be National Park</h1></a></div>'
+                                    break;
+
+                            }
+                        }
+                    }
+                    checkedList.forEach(element => {
+                        if (element == true) checknull = true;
+                    });
+                    console.log(checknull)
+                    if (!checknull)
+                        filter.innerHTML = '<div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%"  src="./image/places/halongbay1.jpg"><a  class="dropdown-itemm" href="../topplaces/halongbay.html"><h1>Halong Bay</h1></a></div><div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/hcm1.jpg"><a class="dropdown-itemm" href="../topplaces/hcmcity.html"><h1>Ho Chi Minh City</h1></a></div><div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/pnkb1.jpg"><a class="dropdown-itemm" href="../topplaces/pnkb.html"><h1>Phong Nha-Ke Bang National Park</h1></a></div><div class="col-sm-6 wow bounceInRight" ><img class="rounded" width="80%" src="../image/places/myson1.jpg"><a class="dropdown-itemm" href="../topplaces/myson.html"><h1>My Son</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/hoian2.jpg"><a class="dropdown-itemm" href="../topplaces/hoian.html"><h1>Hoi An</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/sapa1.jpg"><a class="dropdown-itemm" href="../topplaces/sapa.html"><h1>Sapa Countryside</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/hanoi1.jpg"><a class="dropdown-itemm" href="../topplaces/hanoi.html"><h1>Hanoi</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/nhatrang1.jpg"><a class="dropdown-itemm" href="../topplaces/nhatrang.html"><h1>Nha Trang</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/cuchi2.jpg"><a class="dropdown-itemm" href="../topplaces/cuchi.html"><h1>Cu Chi Tunnels</h1></a></div><div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%" src="../image/places/babe1.jpg"><a class="dropdown-itemm" href="../topplaces/babe.html"><h1>Ba Be National Park</h1></a></div>'
+                }
+
+            </script>
+            <div class="row wow bounceInUp" id="filter" style="margin: 10px;">
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="./image/places/halongbay1.jpg"><a class="dropdown-itemm"
+                        href="../topplaces/halongbay.html">
+                        <h1>Halong Bay</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/hcm1.jpg"><a class="dropdown-itemm" href="../topplaces/hcmcity.html">
+                        <h1>Ho Chi Minh City</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/pnkb1.jpg"><a class="dropdown-itemm" href="../topplaces/pnkb.html">
+                        <h1>Phong Nha-Ke Bang National Park</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/myson1.jpg"><a class="dropdown-itemm" href="../topplaces/myson.html">
+                        <h1>My Son</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/hoian2.jpg"><a class="dropdown-itemm" href="../topplaces/hoian.html">
+                        <h1>Hoi An</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/sapa1.jpg"><a class="dropdown-itemm" href="../topplaces/sapa.html">
+                        <h1>Sapa Countryside</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/hanoi1.jpg"><a class="dropdown-itemm" href="../topplaces/hanoi.html">
+                        <h1>Hanoi</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/nhatrang1.jpg"><a class="dropdown-itemm" href="../topplaces/nhatrang.html">
+                        <h1>Nha Trang</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/cuchi2.jpg"><a class="dropdown-itemm" href="../topplaces/cuchi.html">
+                        <h1>Cu Chi Tunnels</h1>
+                    </a></div>
+                <div class="col-sm-6 wow bounceInRight"><img class="rounded" width="80%"
+                        src="../image/places/babe1.jpg"><a class="dropdown-itemm" href="../topplaces/babe.html">
+                        <h1>Ba Be National Park</h1>
+                    </a></div>
+            </div>
+        </div>
+        <div></div>  
+    </div>
+    <div w3-include-html="_footer.html"></div>
+    <script>includeHTML();</script>
+    <script src="js/floatbtnchat.js"></script>
+    <script src="js/accMana.js"></script>
+</body>
+
+</html>
