@@ -211,8 +211,10 @@ li {
   overflow: hidden;
   background-color: #e5e5e5;
 }
+
 .dropdown-menu li a {
   font-weight: normal;
+  
 }
 .dropdown-menu li:hover {
   display: block;
@@ -232,4 +234,26 @@ li {
 }
 .information span{
   font-weight: bold;
+}
+.dropdown-menu .input-group {
+  display: none;
+}
+@media only screen and (max-width: 1050px) {
+  .nav-item > .input-group {
+    display: none;
+  }
+  .dropdown-menu .input-group {
+    display: inline-flex;
+  }
+}
+.dropdown-menu.show {
+  position: absolute;
+}
+@media only screen and (max-width: 560px) {
+  .nav-item > .input-group {
+    display: inline-flex;
+  }
+  .dropdown-menu .input-group {
+    display: none;
+  }
 }
