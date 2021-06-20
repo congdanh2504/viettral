@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-sm text-dark">
         <div class="container-fluid">
-            <ul class="navbar-nav" id="navi">
+            <ul class="navbar-nav " id="navi">
                 <li class="navbar-header"><a href="#"><img src="./image/logo-sm.png" alt=""></a></li>
                 <li class="nav-item"><a href="./trangchu.html" class="nav-link">Home</a></li>
                 <li class="nav-item dropdown"><a href="#" class="nav-link" data-toggle="dropdown">Places to go</a>
@@ -94,11 +94,6 @@
                         </span>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown">
-                        <i class="fa fa-bell-o" aria-hidden="true">Notification</i>
-                    </a>
-                </li>
                 <li class="nav-item dropdown" style="font-weight: normal;">
                     <a href="#" data-toggle="dropdown">
                         <i class="fa fa-user-o" id="user" aria-hidden="true"> Account</i>
@@ -110,9 +105,20 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
+                            <i class="fa fa-bell" aria-hidden="true" style="color: #F7559A;"></i>
+                            <a href="#">My Notification</a>
+                        </li>
+                        
+                        <li role="separator" class="divider"></li>
+                        <li>
                             <i class="fa fa-sign-out" aria-hidden="true" style="color: #F7559A;"></i>
                             <a href="index.html">Log-out</a>
                         </li>
+                        <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" 
+                                aria-describedby="seasrch-addon" />
+                        </div>
+                      
                     </ul>
                 </li>
             </ul>
@@ -225,7 +231,7 @@
     <div class="container wow bounceInUp">
         <div class="row ">
             <div class="col-md-6">
-                <img class="rounded" src="image/vietnam/mapVN.jpg" alt="">
+                <img class="rounded" src="image/vietnam/mapVN.jpg" alt="" width="100%">
             </div>
             <div class="col-md-6" style="margin-top: 80px;">
                 <div class="best">
