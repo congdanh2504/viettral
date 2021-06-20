@@ -1,99 +1,71 @@
-var inputElements = document.querySelectorAll('.input-group input');
-for (var i=0;i<inputElements.length;i++){
-    inputElements[i].oninput = function(e){
-        e.target.style.borderColor = "green";
-        if (e.target.value==""){
-            e.target.style.borderColor = "red";
+$.each($('.input-group input'),(index, value)=>{
+    $(value).on('input', () => {
+        $(value).css('borderColor', 'green');
+        if ($(value).val() == ""){
+            $(value).css('borderColor', 'red');
         }
-    }
+    });
+});
 
-}
-for (var i=0;i<inputElements.length;i++){
-    inputElements[i].onclick = function(e){
-        document.addEventListener("click", (evt) => {
-            const flyoutElement = inputElements[i];
-            let targetElement = evt.target; // clicked element
-    
-            do {
-                if (targetElement == flyoutElement) {
-                    e.target.style.borderColor = "green";
-                    return;
-                }
-                // Go up the DOM
-                targetElement = targetElement.parentNode;
-            } while (targetElement);
-    
-            if (e.target.value==""){
-                e.target.style.borderColor = "red";
-            }
-            
-        });
-    }
-}
-var email = document.getElementById("emailsu");
-email.oninput = function(e){
-    if (!validateEmail(email.value)){
-        email.style.borderColor= "red";
+$('#emailsu').on('input', () => {
+    if (!validateEmail($('#emailsu').val())){
+        $('#emailsu').css('borderColor', 'red');
     } else {
-        email.style.borderColor= "green";
+        $('#emailsu').css('borderColor', 'green');
     }
-}
-var pass = document.getElementById("passsu");
-var cpass = document.getElementById("cpasssu");
-cpass.oninput = function(e){
-    if (cpass.value != pass.value){
-        cpass.style.borderColor= "red";
+})
+
+$('#cpasssu').on('input', () => {
+    if ($('#cpasssu').val() != $('#passsu').val()){
+        $('#cpasssu').css('borderColor', 'red');
     } else {
-        cpass.style.borderColor= "green";
+        $('#cpasssu').css('borderColor', 'green');
     }
-}
+})
+
 function validateFormSI(e) {
-    var user = document.getElementById("usersi");
-    var pass = document.getElementById("passsi");
-    if (user.value == "" || pass.value == "") {
-        if (user.value == ""){
-            user.style.borderColor = "red";
+    if ($("#usersi").val() == "" || $("#passsi").val() == "") {
+        if ($("#usersi").val() == ""){
+            $("#usersi").css('borderColor', 'red');
         } 
-        if (pass.value == "") {
-            pass.style.borderColor = "red";
+        if ($("#passsi").val() == "") {
+            $("#passsi").css('borderColor', 'red');
         }
         return false;
     } 
-    let query = "?username=" + user.value + "&password=" + pass.value;
+    let query = "?username=" + $("#usersi").val() + "&password=" + $("#passsi").val();
     e.href = "trangchu.html"+query
 }
+
 function validateForm(e) {
-    var email = document.getElementById("emailsu");
-    var user = document.getElementById("usersu");
-    var pass = document.getElementById("passsu");
-    var cpass = document.getElementById("cpasssu");
-    if (email.value == "" || user.value == "" || pass.value == "" || cpass.value == "" || user.value== "admin") {
-        if (email.value == ""){
-            email.style.borderColor = "red";
+    if ($("#emailsu").val() == "" || $("#usersu").val() == "" || $("#passsu").val() == "" || $("#cpasssu").val() == "" || $("#usersu").val() == "admin") {
+        if ($("#emailsu").val()== ""){
+            $("#emailsu").css('borderColor', 'red');
         }
-        if (user.value == "" || user.value == "admin"){
-            user.style.borderColor = "red";
+        if ($("#usersu").val() == "" || $("#usersu").val() == "admin"){
+            $("#usersu").css('borderColor', 'red');
         }
-        if (pass.value == ""){
-            pass.style.borderColor = "red";
+        if ($("#passsu").val() == ""){
+            $("#passsu").css('borderColor', 'red');
         }
-        if (cpass.value == ""){
-            cpass.style.borderColor = "red";
+        if ($("#cpasssu").val()  == ""){
+            $("#cpasssu").css('borderColor', 'red');
         }
         return false;
     } 
-    if (pass.value != cpass.value){
-        pass.style.borderColor = "red";
-        cpass.style.borderColor = "red";
+    if ($("#passsu").val() != $("#cpasssu").val()){
+        $("#passsu").css('borderColor', 'red');
+        $("#cpasssu").css('borderColor', 'red');
         return false;
     } 
-    if (validateEmail(email.value)==false){
-        email.style.borderColor = "red";
+    if (validateEmail($("#emailsu").val())==false){
+        $("#emailsu").css('borderColor', 'red');
         return false;
     }
-    let query = "?username=" + user.value + "&password=" + pass.value;
+    let query = "?username=" + $("#usersu").val() + "&password=" + $("#passsu").val();
     e.href = "trangchu.html"+query
 }
+
 function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
